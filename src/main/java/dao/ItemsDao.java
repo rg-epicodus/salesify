@@ -6,7 +6,7 @@ package dao;
 public interface ItemsDao {
 
     // create
-
+//  .getAll();
     // read
 
     // update

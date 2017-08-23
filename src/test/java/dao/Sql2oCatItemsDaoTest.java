@@ -1,11 +1,11 @@
 package dao;
 
+import models.DogItems;
+
 import org.junit.After;
 import org.junit.Before;
 
 import java.sql.Connection;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Guest on 8/23/17.

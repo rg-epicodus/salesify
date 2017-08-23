@@ -10,6 +10,7 @@ public class DogItems {
     private String description;
     private float price;
     private LocalDateTime purchasedAt;
+
     private int itemId;
     private int id;
 
