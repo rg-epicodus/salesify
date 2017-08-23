@@ -11,7 +11,7 @@ public class CatItems extends Items {
     private int itemId;
     private int id;
 
-    public CatItems(boolean isOnSale, double price, String name, String description, int id) {
+    public CatItems(boolean isOnSale, double price, String name) {
         super(isOnSale, price);
         this.name = name;
         this.description = description;

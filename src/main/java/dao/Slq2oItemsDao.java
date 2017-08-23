@@ -8,4 +8,7 @@ public class Slq2oItemsDao implements ItemsDao{
     public Slq2oItemsDao(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
+
+
+
 }
