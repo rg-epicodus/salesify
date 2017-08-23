@@ -49,3 +49,8 @@ settings.gradle
 # Other #
 ############
 out/
+
+# SQL Code #
+############
+.sql
+.sql/

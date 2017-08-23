@@ -6,9 +6,9 @@ package dao;
 public interface CatItemsDao {
 
     // create
-    void add(DogItem dogItem);
-    // read
 
+    // read
+    //  .getAllCatItems();
     // update
 
     // destroy

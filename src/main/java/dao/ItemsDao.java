@@ -6,8 +6,21 @@ package dao;
 public interface ItemsDao {
 
     // create
-//  .getAll();
+
+
+
     // read
+
+
+    //  .getAll();
+
+    //  .getItemById();
+
+    //  .getPrice();
+
+    //  .getSalesStatus();
+
+    //  .getTimeSold();
 
     // update
 

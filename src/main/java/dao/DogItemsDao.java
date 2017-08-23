@@ -8,7 +8,7 @@ public interface DogItemsDao {
     // create
 
     // read
-
+    // .getAllDogItems();
     // update
 
     // destroy

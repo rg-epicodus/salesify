@@ -11,6 +11,15 @@ public class Items {
     private String zipcode;
     private String phone;
     private int id;
+    private boolean isOnSale;
+    private double price;
+    private LocalDateTime purchasedAt;
+
+
+    public Items(boolean isOnSale, double price) {
+        this.isOnSale = isOnSale;
+        this.price = price;
+    }
 
     public Items(String name, String address, String zipcode, String phone) {
         this.name = name;
@@ -57,6 +66,30 @@ public class Items {
 
     public int getId() {
         return id;
+    }
+
+    public boolean isOnSale() {
+        return isOnSale;
+    }
+
+    public void setOnSale(boolean onSale) {
+        isOnSale = onSale;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public LocalDateTime getPurchasedAt() {
+        return purchasedAt;
+    }
+
+    public void setPurchasedAt(LocalDateTime purchasedAt) {
+        this.purchasedAt = purchasedAt;
     }
 
     @Override
