@@ -6,24 +6,16 @@ package dao;
 public interface SmAnimItemsDao {
 
     // create
+    //  void add (SmAnimItems smAnimItems)
 
     // read
-    //  .getAllSmAnimItems();
-
+    //  list<SmAnimItems> getall
+    //  Items findSmAnimItemsById(int id)
     // update
+    //  updateSmAnimItems
 
     // destroy
+    //  delete all SmAnimItems
+    //  delete SmAnimItemById
+
 }
-
-//    dao
-//            c
-//    add (smanimitems smanimitems)
-//r
-//        list<smanimitems> getall
-//        Items findsmanimitembyid(int id)
-//        u
-//        updatesmanimitem
-//        d
-//        delete all smanimitems
-//        delete smanimitem by id
-

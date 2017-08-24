@@ -6,6 +6,8 @@ id int PRIMARY KEY auto_increment,
  address VARCHAR,
  zipcode VARCHAR,
  phone VARCHAR,
+ price DOUBLE,
+ isOnSale BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS catitems (
@@ -32,7 +34,7 @@ CREATE TABLE IF NOT EXISTS smanimitems (
 id int PRIMARY KEY auto_increment,
 name VARCHAR,
 description VARCHAR,
-price FLOAT,
+price DOUBLE,
 purchasedat TIMESTAMP,
 itemid INTEGER,
 

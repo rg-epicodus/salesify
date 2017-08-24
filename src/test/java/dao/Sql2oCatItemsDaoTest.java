@@ -3,11 +3,15 @@ package dao;
 import models.CatItems;
 import models.DogItems;
 
+import models.Items;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.sql2o.Sql2o;
-
+import models.Items;
 import java.sql.Connection;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Guest on 8/23/17.
@@ -42,6 +46,32 @@ public class Sql2oCatItemsDaoTest {
     public void tearDown() throws Exception {
         conn.close();
     }
+
+
+    public CatItems getTestCatItems_property() {
+        boolean isOnSale = true;
+        String name = "Cat Item2";
+        double price = 5.00;
+        return new CatItems(isOnSale, price, name);
+    }
+
+
+//    public Items getTestItems() throws Exception {
+//        String name= "Cat Item2";
+//        String address = "Portland";
+//        String zipcode = "97204";
+//        String phone = "503-000-9870";
+//        return new Items(name,address, zipcode, phone);
+//    }
+
+    @Test
+    public void getTestCatItems() throws Exception {
+        CatItems catItems = getTestCatItems_property();
+        catItemsDao.add(catItems);
+        assertEquals(1,catItems.getId() );
+    }
+
+
 
     // helpers
 

@@ -10,26 +10,18 @@ public interface ItemsDao {
     // create
         void add(Items items);
 
-
-
-
     // read
-
-
-    //  .getAll();
-
-    //  .getItemById();
-
+    //  List<Items>.getAll();
+        Items findById(int id);
     //  .getPrice();
-
     //  .getSalesStatus();
-
     //  .getTimeSold();
 
     // update
 
     // destroy
-
+    //  deleteAllItems
+    //  deleteItemsById
 }
 
 //Items
@@ -40,12 +32,6 @@ public interface ItemsDao {
 //        localdatetime createdat
 //        boolean onsale
 //
-//        dao
-//        c
-//        add (items items)
-//        r
-//        list<items> getall
-//        Items findbyid(int id)
 //        u
 //        update
 //        d
