@@ -31,3 +31,26 @@ public interface ItemsDao {
     // destroy
 
 }
+
+//Items
+//        str name
+//        str description
+//        double price
+//        int id
+//        localdatetime createdat
+//        boolean onsale
+//
+//        dao
+//        c
+//        add (items items)
+//        r
+//        list<items> getall
+//        Items findbyid(int id)
+//        u
+//        update
+//        d
+//        delete all items
+//        delete item by id
+
+
+

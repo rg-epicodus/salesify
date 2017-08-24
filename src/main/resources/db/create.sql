@@ -54,3 +54,15 @@ CREATE TABLE IF NOT EXISTS items_smanimitems (
 id int PRIMARY KEY auto_increment,
 
 );
+
+--CREATE TABLE IF NOT EXISTS shoes(
+--    id int PRIMARY KEY auto_increment,
+--    name VARCHAR,
+--    description VARCHAR,
+--    price DOUBLE,
+--    cattype VARCHAR,
+--    dogType VARCHAR,
+--    smanimtype VARCHAR,
+--    onsale BOOLEAN,
+--    createdAt TIMESTAMP
+--);

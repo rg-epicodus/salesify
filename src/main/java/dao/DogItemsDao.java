@@ -13,3 +13,20 @@ public interface DogItemsDao {
 
     // destroy
 }
+//dogitems
+//        string dogtype
+//
+//        dao
+//        c
+//        add (dogitems dogitems)
+//        r
+//        list<dogitems> getall
+//        Items finddogitembyid(int id)
+//        u
+//        updatedogitem
+//        d
+//        delete all dogitems
+//        delete dogitem by id
+//
+//        smanimitems
+//        smanimtype

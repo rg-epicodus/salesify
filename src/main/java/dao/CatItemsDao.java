@@ -25,3 +25,18 @@ public interface CatItemsDao {
 
     // destroy
 }
+
+//catitems
+//        string cattype
+//
+//        dao
+//        c
+//        add (catitems catitems)
+//        r
+//        list<catitems> getall
+//        Items findcatitembyid(int id)
+//        u
+//        updatecatitem
+//        d
+//        delete all catitems
+//        delete catitem by id
