@@ -16,7 +16,7 @@ public interface CatItemsDao {
 
     // read
     //  .getAllCatItems();
-//    List<CatItems> getAll();
+        List<CatItems> getAll();
 //    List<Items>
 
     // update
@@ -24,6 +24,8 @@ public interface CatItemsDao {
 
 
     // destroy
+    void deleteCatItemsById(int id);
+
 }
 
 //catitems

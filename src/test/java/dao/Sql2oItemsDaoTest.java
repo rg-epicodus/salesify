@@ -72,6 +72,38 @@ public class Sql2oItemsDaoTest {
 
     }
 
+    @Test
+    public void getAll_allItemsAreFound() throws Exception {
+        Items items = getTestItems();
+        Items anotherItems = getTestItemsTwo();
+        itemsDao.add(items);
+        itemsDao.add(anotherItems);
+        int number = itemsDao.getAll().size();
+        assertEquals(2, number);
+    }
+
+    @Test
+    public void update_correctlyUpdates() {
+        Items items = getTestItems();
+        itemsDao.add(items);
+        itemsDao.update(items.getId(), "newName", "newAddress", "newZipcode", "newPhone");
+        Items updatedItems = itemsDao.findById(items.getId());
+        assertEquals("newZipcode", updatedItems.getZipcode());
+        assertEquals("newName", updatedItems.getName());
+        assertEquals("newAddress", updatedItems.getAddress());
+        assertEquals("newPhone", updatedItems.getPhone());
+    }
+
+    @Test
+    public void deleteItemsById_deletesVeryWell() {
+        Items item = getTestItems();
+        itemsDao.add(item);
+        itemsDao.deleteItemsById(item.getId());
+        assertEquals(0,itemsDao.getAll().size());
+    }
+
+
+
     // helpers
 
 }

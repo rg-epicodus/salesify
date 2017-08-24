@@ -5,6 +5,8 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.util.List;
+
 public class Slq2oItemsDao implements ItemsDao{
     private final Sql2o sql2o;
 
@@ -42,5 +44,47 @@ public class Slq2oItemsDao implements ItemsDao{
                     .executeAndFetchFirst(Items.class);
         }
     }
+
+    @Override
+    public List<Items> getAll() {
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM items") //raw sql
+                    .executeAndFetch(Items.class); //fetch a list
+        }
+    }
+    @Override
+    public void update(int id, String newName, String newAddress, String newZipcode, String newPhone) {
+        String sql = "UPDATE items SET (name,address,zipcode,phone)=(:name,:address,:zipcode,:phone) WHERE id=:id"; //raw sql
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("name", newName)
+                    .addParameter("address", newAddress)
+                    .addParameter("zipcode", newZipcode)
+                    .addParameter("phone", newPhone)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    @Override
+    public void deleteItemsById(int id) {
+        String sql = "DELETE from items WHERE id=:id";
+        String deleteJoin = "DELETE from items_catitems WHERE itemsId = :itemsId";
+//        String deleteJoin = "DELETE from items_dogitems WHERE itemsId = :itemsId";
+//        String deleteJoin = "DELETE from items_smanimitems WHERE itemsId = :itemsId";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+            con.createQuery(deleteJoin)
+                    .addParameter("itemsId",id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
 
 }

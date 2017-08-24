@@ -71,7 +71,13 @@ public class Sql2oCatItemsDaoTest {
         assertEquals(1,catItems.getId() );
     }
 
-
+    @Test
+    public void deleteCatItemsById_deletesVeryWell() {
+        CatItems catItems = setupNewCatItem();
+        catItemsDao.add(catItems);
+        catItemsDao.deleteCatItemsById(catItems.getId());
+        assertEquals(0, catItemsDao.getAll().size());
+    }
 
     // helpers
 

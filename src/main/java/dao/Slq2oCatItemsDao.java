@@ -7,6 +7,8 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.util.List;
+
 public class Slq2oCatItemsDao implements CatItemsDao {
     private final Sql2o sql2o;
 
@@ -32,13 +34,35 @@ public class Slq2oCatItemsDao implements CatItemsDao {
         }
 
 
-
-
     }
 
     @Override
     public void addCatItemsToItems(CatItems catItems, Items items) {
 
+    }
+
+    @Override
+    public List<CatItems> getAll(){
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM catitems")
+                    .executeAndFetch(CatItems.class);
+        }
+    }
+
+    @Override
+    public void deleteCatItemsById(int id) {
+        String sql = "DELETE from catItems WHERE id=:id"; //raw sql
+        String deleteJoin = "DELETE from items_catitems WHERE catitemsid=:catitemsid"; //raw sql
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+            con.createQuery(deleteJoin)
+                    .addParameter("catitemsid", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
     }
 
 

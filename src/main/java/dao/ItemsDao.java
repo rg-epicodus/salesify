@@ -2,6 +2,8 @@ package dao;
 
 import models.Items;
 
+import java.util.List;
+
 /**
  * Created by Guest on 8/23/17.
  */
@@ -11,17 +13,18 @@ public interface ItemsDao {
         void add(Items items);
 
     // read
-    //  List<Items>.getAll();
+     List<Items> getAll();
+
         Items findById(int id);
     //  .getPrice();
     //  .getSalesStatus();
     //  .getTimeSold();
 
     // update
-
+    void update(int id, String name, String address, String zipcode, String phone);
     // destroy
     //  deleteAllItems
-    //  deleteItemsById
+      void deleteItemsById(int id);
 }
 
 //Items
